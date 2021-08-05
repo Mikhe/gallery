@@ -13,7 +13,7 @@ const Index = () => {
         <header className={cn()}>
             <div className={cn('container')}>
                 <div className={cn('logo-container')}>
-                    <img src={LogoIcon} width={48} height={48} className={cn('logo-container-logo')}/>
+                    <img alt='logo' src={LogoIcon} width={48} height={48} className={cn('logo-container-logo')}/>
                     <Text className={cn('logo-container-text')} transform={'uppercase'}>
                         прекрасная Работа, достойная каждого
                     </Text>

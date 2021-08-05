@@ -8,7 +8,7 @@ export const Cart = (props) => {
 
     return (
         <div className={cn('cart')}>
-            <img width={22} height={22} src={CartIcon} className={cn('cart-logo')}/>
+            <img alt='Cart' width={22} height={22} src={CartIcon} className={cn('cart-logo')}/>
 
             <Text className={cn('cart-text')} transform={'uppercase'}>
                 Корзина
