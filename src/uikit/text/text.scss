@@ -1,24 +1,28 @@
 @import '../../styles/colors';
 
+$fontSizes: (
+  14px,
+  86px,
+);
+
+@mixin fs-modifiers {
+  @each $size in $fontSizes {
+    &_fs_#{$size} {
+      font-size: $size;
+    }
+  }
+}
+
 .control {
   &__text {
     @include color-modifiers;
+    @include fs-modifiers;
 
     margin: 0;
 
     &_transform {
       &_uppercase {
         text-transform: uppercase;
-      }
-    }
-
-    &_fs {
-      &_14px {
-        font-size: 14px;
-      }
-
-      &_86px {
-        font-size: 86px;
       }
     }
   }
