@@ -24,7 +24,7 @@ const Counter = (props) => {
 
     return (
         <div className={cn('cart-counter')}>
-            <Text className={cn('cart-counter-value')} transform={'uppercase'} fs="14px">5</Text>
+            <Text className={cn('cart-counter-value')} transform={'uppercase'}>5</Text>
         </div>
     );
 };
