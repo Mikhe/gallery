@@ -1,0 +1,12 @@
+$colors: (
+  lightgray: #DCCECE,
+  black: #1B1717,
+);
+
+@mixin color-modifiers {
+  @each $name, $hex in $colors {
+    &_color_#{$name} {
+      color: $hex;
+    }
+  }
+}
