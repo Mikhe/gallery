@@ -1,0 +1,30 @@
+.title {
+  display: flex;
+  height: 330px;
+  justify-content: center;
+  background-image: url(../../assets/sign.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 4%;
+
+  @media (max-width: 480px) {
+    height: auto;
+    background: none;
+  }
+
+  &__text {
+    max-width: 800px;
+    font-family: Lora;
+    line-height: 100px;
+    align-self: center;
+    letter-spacing: 0.02em;
+    text-align: center;
+    margin-top: -25px;
+    margin-left: -4%;
+
+    @media (max-width: 480px) {
+        font-size: 18px;
+        line-height: 28px;
+      }
+  }
+}
