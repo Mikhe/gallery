@@ -1,7 +1,7 @@
 import React from 'react';
 
 import CartIcon from '../../assets/cart.svg';
-import { Text } from '../../uikit/text/text';
+import { Text } from '../../uikit';
 
 export const Cart = (props) => {
     const { cn } = props;

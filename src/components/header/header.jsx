@@ -4,7 +4,7 @@ import { createCn } from 'bem-react-classname';
 import './header.scss';
 import LogoIcon from '../../assets/logo.svg';
 import { Cart } from './cart';
-import { Text } from '../../uikit/text/text';
+import { Text } from '../../uikit';
 
 export const Header = () => {
     const cn = createCn('header');
