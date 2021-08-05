@@ -1,0 +1,12 @@
+@import './colors';
+
+body {
+  margin: 0;
+  background: map_get($colors, black);
+  color: map_get($colors, lightgray);
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+}
