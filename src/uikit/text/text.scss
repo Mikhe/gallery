@@ -1,0 +1,21 @@
+@import '../../styles/colors';
+
+.control {
+  &__text {
+    @include color-modifiers;
+
+    margin: 0;
+
+    &_transform {
+      &_uppercase {
+        text-transform: uppercase;
+      }
+    }
+
+    &_fs {
+      &_14px {
+        font-size: 14px;
+      }
+    }
+  }
+}
