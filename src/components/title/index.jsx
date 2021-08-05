@@ -4,7 +4,7 @@ import { createCn } from 'bem-react-classname';
 import './title.scss';
 import { Text } from '../../uikit';
 
-export const Title = () => {
+const Title = () => {
     const cn = createCn('title');
 
     return (
@@ -17,3 +17,5 @@ export const Title = () => {
         </div>
     );
 };
+
+export default Title;

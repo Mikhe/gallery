@@ -6,7 +6,7 @@ import LogoIcon from '../../assets/logo.svg';
 import { Cart } from './cart';
 import { Text } from '../../uikit';
 
-export const Header = () => {
+const Index = () => {
     const cn = createCn('header');
 
     return (
@@ -24,3 +24,5 @@ export const Header = () => {
         </header>
     );
 };
+
+export default Index;
