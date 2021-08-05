@@ -1,0 +1,72 @@
+@import '../../styles/colors';
+
+.header {
+  margin: 52px 90px;
+
+  @media (max-width: 480px) {
+    margin: 52px 20px;
+  }
+
+  &__container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__logo-container {
+    display: flex;
+
+    &-logo {
+      margin-right: 24px;
+    }
+
+    &-text {
+      max-width: 175px;
+      align-self: center;
+      letter-spacing: 0.06em;
+
+      @media (max-width: 480px) {
+        font-size: 10px;
+      }
+    }
+  }
+
+  &__cart {
+    display: flex;
+
+    &-logo {
+      margin-right: 12px;
+      align-self: center;
+    }
+
+    &-text {
+      align-self: center;
+      letter-spacing: 0.06em;
+
+      @media (max-width: 480px) {
+        display: none;
+      }
+    }
+
+    &-counter {
+      display: flex;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      margin-left: 4px;
+      background: map_get($colors, lightgray);
+      border-radius: 100px;
+      align-self: center;
+
+      @media (max-width: 480px) {
+        margin-left: -6px;
+      }
+
+      &-value {
+        line-height: 16px;
+        color: map_get($colors, black);
+        align-self: center;
+      }
+    }
+  }
+}
