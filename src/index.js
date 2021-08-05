@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'typeface-roboto-cyrillic';
-import 'typeface-lora';
 
 import App from './App';
 
