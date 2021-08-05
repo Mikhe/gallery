@@ -3,7 +3,7 @@ import { createCn } from 'bem-react-classname';
 
 import './header.scss';
 import LogoIcon from '../../assets/logo.svg';
-import { Cart } from './cart';
+import Cart from './cart';
 import { Text } from '../../uikit';
 
 const Index = () => {

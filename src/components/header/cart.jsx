@@ -3,7 +3,7 @@ import React from 'react';
 import CartIcon from '../../assets/cart.svg';
 import { Text } from '../../uikit';
 
-export const Cart = (props) => {
+const Cart = (props) => {
     const { cn } = props;
 
     return (
@@ -28,3 +28,5 @@ const Counter = (props) => {
         </div>
     );
 };
+
+export default Cart;
