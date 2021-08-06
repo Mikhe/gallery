@@ -1,14 +1,13 @@
 import React from 'react';
 
-import CartIcon from '../../assets/cart.svg';
-import { Text } from '../../uikit';
+import { Text, Icon } from '../../uikit';
 
 const Cart = (props) => {
     const { cn } = props;
 
     return (
         <div className={cn('cart')}>
-            <img alt='Cart' width={22} height={22} src={CartIcon} className={cn('cart-logo')}/>
+            <Icon width={20} height={23} name="cart" color="lightgray" className={cn('cart-logo')}/>
 
             <Text className={cn('cart-text')} transform={'uppercase'}>
                 Корзина
