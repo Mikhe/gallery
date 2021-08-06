@@ -12,7 +12,7 @@ import pic10 from './10.png';
 
 const mockData = [
     {
-        title: 'Pic 1',
+        title: 'Рождение Венеры',
         author: 'Сандро Боттичелли',
         weight: '1501 г',
         price: '2 000 000 $',
@@ -21,22 +21,30 @@ const mockData = [
         src: pic1,
     },
     {
-        title: 'Pic 3',
-        author: 'Сандро Боттичелли',
+        title: 'Тайная вечеря',
+        author: 'Леонардо да Винчи',
         weight: '1501 г',
         price: '2 000 000 $',
-        sale: '1 000 000 $',
-        sold: false,
-        src: pic3,
+        sold: true,
+        src: pic1,
     },
     {
-        title: 'Pic 2 Long pic name should be there to test rendering',
-        author: 'Long author name should be there to test rendering',
+        title: 'Pic 2 Long pic name should be there to test rendering 2',
+        author: 'Long author name should be there to test rendering 2',
         weight: '1501 г',
         price: '2 000 000 $',
         sale: '1 000 000 $',
         sold: false,
         src: pic2,
+    },
+    {
+        title: 'Pic 2 Long pic name should be there to test rendering 3',
+        author: 'Long author name should be there to test rendering 3',
+        weight: '1501 г',
+        price: '2 000 000 $',
+        sale: '1 000 000 $',
+        sold: false,
+        src: pic3,
     },
     {
         title: 'Pic 4',
@@ -57,6 +65,15 @@ const mockData = [
         src: pic5,
     },
     {
+        title: 'Pic 2 Long pic name should be there to test rendering 1',
+        author: 'Long author name should be there to test rendering 1',
+        weight: '1501 г',
+        price: '2 000 000 $',
+        sale: '1 000 000 $',
+        sold: false,
+        src: pic2,
+    },
+    {
         title: 'Pic 6',
         author: 'Сандро Боттичелли',
         weight: '1501 г',
@@ -64,15 +81,6 @@ const mockData = [
         sale: '1 000 000 $',
         sold: true,
         src: pic6,
-    },
-    {
-        title: 'Pic 2 Long pic name should be there to test rendering',
-        author: 'Long author name should be there to test rendering',
-        weight: '1501 г',
-        price: '2 000 000 $',
-        sale: '1 000 000 $',
-        sold: false,
-        src: pic2,
     },
     {
         title: 'Pic 7',
