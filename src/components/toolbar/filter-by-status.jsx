@@ -13,7 +13,7 @@ const FilterByStatus = (props) => {
     return (
         <div className={cn('filter-by-status')}>
             {filterOptions.map(filter => (
-                <Filter cn={cn} option={filter} idx={filter.value} />
+                <Filter cn={cn} option={filter} key={filter.value} />
             ))}
         </div>
     );
