@@ -12,3 +12,11 @@ $colors: (
     }
   }
 }
+
+@mixin background-modifiers {
+  @each $name, $hex in $colors {
+    &_color_#{$name} {
+      background-color: $hex;
+    }
+  }
+}

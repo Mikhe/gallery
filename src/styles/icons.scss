@@ -1,0 +1,12 @@
+$icons: (
+  cart: url('../assets/cart.svg'),
+  search: url('../assets/search.svg'),
+);
+
+@mixin icons-modifiers {
+  @each $name, $path in $icons {
+    &_icon_#{$name} {
+      mask-image: $path;
+    }
+  }
+}
