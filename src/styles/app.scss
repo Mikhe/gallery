@@ -16,6 +16,7 @@ body {
     display: flex;
     max-width: 1216px;
     margin: 46px auto;
+    flex-direction: column;
 
     @media (max-width: 768px) {
       margin: 8px auto;
