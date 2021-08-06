@@ -1,8 +1,9 @@
 import React from 'react';
+import { observer } from 'mobx-react';
 import { createCn } from 'bem-react-classname';
 
 import './gallery.scss';
-import mockData from '../../mock/data';
+import { store } from '../../stores/store';
 import { Icon, Text } from '../../uikit';
 
 const rowHeight = 8;
@@ -17,17 +18,18 @@ function resizeGridItem(item){
     item.style.gridColumnEnd = `span ${rowSpanWidth}`;
 }
 
-const Gallery = () => {
+const Gallery = observer(() => {
     const cn = createCn('gallery');
+    const { pictures } = store;
 
     return (
         <div className={cn()}>
-            {mockData.map(pic => (
+            {pictures.map(pic => (
                 <Picture pic={pic} cn={cn} key={`${pic.title}-${pic.author}`}/>
             ))}
         </div>
     );
-};
+});
 
 const Picture = (props) => {
     const { pic, cn } = props;
