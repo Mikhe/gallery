@@ -28,12 +28,9 @@
     width: fit-content;
     height: fit-content;
 
-    @media (max-width: 780px) {
-      padding: 20px;
-    }
-
     @media (max-width: 480px) {
       margin: 0 auto;
+      padding: 0 20px;
     }
 
     &-image {
@@ -46,9 +43,13 @@
       position: absolute;
       opacity: 0;
       top: 0;
-      bottom: 0;
+      bottom: 5px;
       width: 100%;
       transition: .5s ease;
+
+      @media (max-width: 480px) {
+        width: calc(100% - 40px);
+      }
 
       &-wrap {
         padding: 13px 23px 23px;
@@ -69,7 +70,7 @@
 
     &-buy {
       position: absolute;
-      bottom: 29px;
+      bottom: 23px;
       display: flex;
       justify-content: space-between;
       width: 100%;
