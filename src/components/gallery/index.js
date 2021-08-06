@@ -3,7 +3,7 @@ import { createCn } from 'bem-react-classname';
 
 import './gallery.scss';
 import mockData from '../../mock/data';
-import { Text } from '../../uikit';
+import { Icon, Text } from '../../uikit';
 
 const rowHeight = 8;
 const columnWidth = 280;
@@ -34,14 +34,15 @@ const Picture = (props) => {
     const ref = React.useRef(null);
     const prevPrice = pic.sale ? pic.price : '';
     const currentPrice = pic.sale ? pic.sale : pic.price;
+    const isSold = !!pic.sold;
     const handleLoad = () => {
         resizeGridItem(ref.current);
     };
 
     return (
         <div ref={ref} className={cn('gallery-item')}>
-            <img src={pic.src} onLoad={handleLoad} className={cn('gallery-item-image')} />
-            <div className={cn('gallery-item-info')}>
+            <img src={pic.src} onLoad={handleLoad} className={cn('gallery-item-image', { sold: isSold })} />
+            <div className={cn('gallery-item-info', { sold: isSold })}>
                 <div className={cn('gallery-item-info-wrap')}>
                     <Text className={cn('gallery-item-info-title')} fs="18px">{pic.title}</Text>
 
@@ -49,14 +50,30 @@ const Picture = (props) => {
                         {`${pic.author}, ${pic.weight}`}
                     </Text>
 
-                    <div className={cn('gallery-item-buy')}>
-                        <div className={cn('gallery-item-buy-price')}>
-                            <Text className={cn('gallery-item-buy-price-prev')}>{prevPrice}</Text>
-                            <Text className={cn('gallery-item-buy-price-current')} fs="16px">{currentPrice}</Text>
-                        </div>
+                    {!isSold && (
+                        <div className={cn('gallery-item-buy')}>
+                            <div className={cn('gallery-item-buy-price')}>
+                                <Text className={cn('gallery-item-buy-price-prev')}>{prevPrice}</Text>
+                                <Text className={cn('gallery-item-buy-price-current')} fs="16px">{currentPrice}</Text>
+                            </div>
 
-                        <button className={cn('gallery-item-buy-button')}>Купить</button>
-                    </div>
+                            <button className={cn('gallery-item-buy-button')}>Купить</button>
+                        </div>
+                    )}
+
+                    {isSold && (
+                        <div className={cn('gallery-item-auc')}>
+                            <Icon
+                                className={cn('gallery-item-auc-icon')}
+                                name="auc"
+                                color="lightgray"
+                                width={21}
+                                height={21}
+                            />
+
+                            <Text>Продана на аукционе</Text>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

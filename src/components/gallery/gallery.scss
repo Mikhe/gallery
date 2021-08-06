@@ -34,7 +34,7 @@
     }
 
     &-image {
-      &:hover {
+      &:hover, &_sold {
         opacity: 0.5;
       }
     }
@@ -60,6 +60,10 @@
         background: rgb(0, 0, 0);
         background: rgba(0, 0, 0, 0.5);
         cursor: pointer;
+      }
+
+      &_sold:hover {
+        background: none;
       }
 
       &-title, &-details {
@@ -109,6 +113,16 @@
         &:hover {
           background: map_get($colors, btnHover);
         }
+      }
+    }
+
+    &-auc {
+      display: flex;
+      position: absolute;
+      bottom: 23px;
+
+      * {
+        align-self: center;
       }
     }
   }

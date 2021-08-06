@@ -4,7 +4,6 @@ import pic3 from './3.png';
 import pic4 from './4.png';
 import pic5 from './5.png';
 import pic6 from './6.png';
-import pic7 from './7.png';
 import pic8 from './8.png';
 import pic9 from './9.png';
 import pic10 from './10.png';
@@ -17,7 +16,7 @@ const mockData = [
         weight: '1501 г',
         price: '2 000 000 $',
         sale: '1 000 000 $',
-        sold: true,
+        sold: false,
         src: pic1,
     },
     {
@@ -89,7 +88,7 @@ const mockData = [
         price: '2 000 000 $',
         sale: '1 000 000 $',
         sold: true,
-        src: pic7,
+        src: pic6,
     },
     {
         title: 'Pic 8',
