@@ -1,0 +1,36 @@
+@import '../../styles/colors';
+
+.toolbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  &__filter-by-status {
+    display: flex;
+
+    &-option {
+      opacity: 0.5;
+      cursor: pointer;
+      box-sizing: border-box;
+      border: 1px solid map_get($colors, black);
+      margin-right: 14px;
+      line-height: 24px;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &_active {
+        border: 1px solid map_get($colors, border);
+      }
+
+      &-text {
+        padding: 5px 17px;
+      }
+    }
+  }
+
+  &__filter-search {
+    max-width: 490px;
+  }
+}

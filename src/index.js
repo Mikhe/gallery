@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'typeface-roboto-cyrillic';
 
-import App from './App';
+import App from './app';
 
 ReactDOM.render(
   <React.StrictMode>

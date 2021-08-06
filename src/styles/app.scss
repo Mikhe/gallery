@@ -10,3 +10,11 @@ body {
   font-size: 14px;
   line-height: 20px;
 }
+
+.app {
+  &__main {
+    display: flex;
+    max-width: 1216px;
+    margin: 46px auto;
+  }
+}
