@@ -1,0 +1,58 @@
+@import '../../styles/colors';
+@import '../../styles/icons';
+
+$padding: 13px;
+$font-size: 16px;
+$line-height: 24px;
+$opacity: 0.5;
+
+.control {
+  &__text-input {
+    display: flex;
+    width: 100%;
+    padding: 8px 0 17px;
+    box-sizing: border-box;
+    border-bottom: 1px solid map_get($colors, lightgray);
+    opacity: $opacity;
+
+    &:hover {
+      opacity: 1;
+
+      input::-webkit-input-placeholder {
+        opacity: $opacity;
+      }
+    }
+
+    input {
+      width: 100%;
+      background: none;
+      border: none;
+      color: map_get($colors, lightgray);
+      outline: none;
+      font-family: Roboto , sans-serif;
+      font-size: $font-size;
+      line-height: $line-height;
+
+      &::-webkit-input-placeholder {
+        color: map_get($colors, lightgray);
+        font-family: Roboto , sans-serif;
+        font-size: $font-size;
+        line-height: $line-height;
+      }
+    }
+
+    &-subplaceholder {
+      align-self: center;
+      cursor: pointer;
+      padding-left: $padding;
+      letter-spacing: 0.06em;
+    }
+
+    &-icon {
+      @include icons-modifiers;
+
+      padding-left: $padding;
+      align-self: center;
+    }
+  }
+}
