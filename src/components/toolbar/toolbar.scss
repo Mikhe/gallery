@@ -5,6 +5,11 @@
   width: 100%;
   justify-content: space-between;
 
+  @media (max-width: 1024px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   &__filter-by-status {
     display: flex;
 
@@ -32,5 +37,9 @@
 
   &__filter-search {
     max-width: 490px;
+
+    @media (max-width: 480px) {
+      margin: 0 5%;
+    }
   }
 }
