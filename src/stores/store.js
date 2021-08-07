@@ -46,6 +46,13 @@ export class Store {
             return match;
         });
     };
+
+    buyPicture = (id) => {
+        // kinda backend request
+        mockData.find(pic => pic.id === id).order = true;
+
+        this.pictures.find(pic => pic.id === id).order = true;
+    };
 }
 
 decorate(Store, {
@@ -54,6 +61,7 @@ decorate(Store, {
     search: observable,
     filterByStatus: action,
     filterByTitle: action,
+    buyPicture: action,
 });
 
 export const store = new Store();

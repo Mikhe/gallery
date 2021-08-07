@@ -25,20 +25,25 @@ const Gallery = observer(() => {
     return (
         <div className={cn()}>
             {pictures.map(pic => (
-                <Picture pic={pic} cn={cn} key={`${pic.title}-${pic.author}`}/>
+                <Picture pic={pic} cn={cn} key={pic.id}/>
             ))}
         </div>
     );
 });
 
-const Picture = React.memo((props) => {
+const Picture = observer((props) => {
     const { pic, cn } = props;
+    const { id, sold, sale, price, title, weight, author, order } = pic;
+    const { buyPicture } = store;
     const ref = React.useRef(null);
-    const prevPrice = pic.sale ? pic.price : '';
-    const currentPrice = pic.sale ? pic.sale : pic.price;
-    const isSold = !!pic.sold;
+    const prevPrice = sale ? price : '';
+    const currentPrice = sale ? sale : price;
+    const isSold = !!sold;
     const handleLoad = () => {
         resizeGridItem(ref.current);
+    };
+    const handleBuy = () => {
+        buyPicture(id)
     };
 
     return (
@@ -46,20 +51,28 @@ const Picture = React.memo((props) => {
             <img src={pic.src} onLoad={handleLoad} className={cn('gallery-item-image', { sold: isSold })} />
             <div className={cn('gallery-item-info', { sold: isSold })}>
                 <div className={cn('gallery-item-info-wrap')}>
-                    <Text className={cn('gallery-item-info-title')} fs="18px">{pic.title}</Text>
+                    <Text className={cn('gallery-item-info-title')} fs="18px">{title}</Text>
 
                     <Text className={cn('gallery-item-info-details')}>
-                        {`${pic.author}, ${pic.weight}`}
+                        {`${author}, ${weight}`}
                     </Text>
 
                     {!isSold && (
                         <div className={cn('gallery-item-buy')}>
-                            <div className={cn('gallery-item-buy-price')}>
+                            <div className={cn('gallery-item-buy-price', { order })}>
                                 <Text className={cn('gallery-item-buy-price-prev')}>{prevPrice}</Text>
                                 <Text className={cn('gallery-item-buy-price-current')} fs="16px">{currentPrice}</Text>
                             </div>
 
-                            <button className={cn('gallery-item-buy-button')}>Купить</button>
+                            <button className={cn('gallery-item-buy-button', { order })} onClick={handleBuy}>
+                                <div className={cn('gallery-item-buy-button-text')}>
+                                    {order ? 'В корзине' : 'Купить'}
+                                </div>
+
+                                {order && (
+                                    <Icon name="success" color="black" width={14} height={11} />
+                                )}
+                            </button>
                         </div>
                     )}
 

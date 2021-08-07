@@ -11,6 +11,7 @@ import pic10 from './10.png';
 
 const mockData = [
     {
+        id: 1,
         title: 'Рождение Венеры',
         author: 'Сандро Боттичелли',
         weight: '1501 г',
@@ -20,6 +21,7 @@ const mockData = [
         src: pic1,
     },
     {
+        id: 2,
         title: 'Тайная вечеря',
         author: 'Леонардо да Винчи',
         weight: '1501 г',
@@ -28,6 +30,7 @@ const mockData = [
         src: pic1,
     },
     {
+        id: 3,
         title: 'Pic 2 Long pic name should be there to test rendering 2',
         author: 'Long author name should be there to test rendering 2',
         weight: '1501 г',
@@ -37,6 +40,7 @@ const mockData = [
         src: pic2,
     },
     {
+        id: 4,
         title: 'Pic 3 Long pic name should be there to test rendering 3',
         author: 'Long author name should be there to test rendering 3',
         weight: '1501 г',
@@ -46,6 +50,7 @@ const mockData = [
         src: pic3,
     },
     {
+        id: 5,
         title: 'Pic 4',
         author: 'Сандро Боттичелли',
         weight: '1501 г',
@@ -55,6 +60,7 @@ const mockData = [
         src: pic4,
     },
     {
+        id: 6,
         title: 'Pic 5',
         author: 'Сандро Боттичелли',
         weight: '1501 г',
@@ -64,6 +70,7 @@ const mockData = [
         src: pic5,
     },
     {
+        id: 7,
         title: 'Pic 2 Long pic name should be there to test rendering 1',
         author: 'Long author name should be there to test rendering 1',
         weight: '1501 г',
@@ -73,6 +80,7 @@ const mockData = [
         src: pic2,
     },
     {
+        id: 8,
         title: 'Pic 6',
         author: 'Сандро Боттичелли',
         weight: '1501 г',
@@ -82,6 +90,7 @@ const mockData = [
         src: pic6,
     },
     {
+        id: 9,
         title: 'Pic 7',
         author: 'Сандро Боттичелли',
         weight: '1501 г',
@@ -91,6 +100,7 @@ const mockData = [
         src: pic6,
     },
     {
+        id: 10,
         title: 'Pic 8',
         author: 'Сандро Боттичелли',
         weight: '1501 г',
@@ -100,6 +110,7 @@ const mockData = [
         src: pic8,
     },
     {
+        id: 11,
         title: 'Pic 9',
         author: 'Сандро Боттичелли',
         weight: '1501 г',
@@ -109,6 +120,7 @@ const mockData = [
         src: pic9,
     },
     {
+        id: 12,
         title: 'Pic 10',
         author: 'Сандро Боттичелли',
         weight: '1501 г',

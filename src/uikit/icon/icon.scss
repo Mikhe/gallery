@@ -5,6 +5,8 @@ $size: 24px;
 
 .control {
   &__icon {
+    width: fit-content;
+
     &-image {
       @include icons-modifiers;
       @include background-modifiers;
