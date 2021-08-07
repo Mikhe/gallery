@@ -1,6 +1,8 @@
 import React from 'react';
+import { observer } from 'mobx-react';
 
 import { Text, Icon } from '../../uikit';
+import { store } from '../../stores/store';
 
 const Cart = (props) => {
     const { cn } = props;
@@ -18,14 +20,15 @@ const Cart = (props) => {
     );
 };
 
-const Counter = (props) => {
+const Counter = observer((props) => {
+    const { bought } = store;
     const { cn } = props;
 
     return (
         <div className={cn('cart-counter')}>
-            <Text className={cn('cart-counter-value')} transform={'uppercase'}>5</Text>
+            <Text className={cn('cart-counter-value')} transform={'uppercase'}>{bought}</Text>
         </div>
     );
-};
+});
 
 export default Cart;

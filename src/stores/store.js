@@ -6,6 +6,7 @@ export class Store {
     pictures = [];
     status = 1;
     search = '';
+    bought = 0;
 
     constructor() {
         autorun(() => this.fetchPictures());
@@ -52,6 +53,7 @@ export class Store {
         mockData.find(pic => pic.id === id).order = true;
 
         this.pictures.find(pic => pic.id === id).order = true;
+        this.bought++;
     };
 }
 
@@ -59,6 +61,7 @@ decorate(Store, {
     pictures: observable,
     status: observable,
     search: observable,
+    bought: observable,
     filterByStatus: action,
     filterByTitle: action,
     buyPicture: action,
