@@ -1,4 +1,4 @@
-import { action, decorate, observable, autorun, runInAction } from 'mobx';
+import { action, decorate, observable, autorun, computed } from 'mobx';
 
 import mockData from '../mock/data';
 
@@ -7,6 +7,7 @@ export class Store {
     status = 1;
     search = '';
     bought = 0;
+    loaded = 0;
 
     constructor() {
         autorun(() => this.fetchPictures());
@@ -46,6 +47,7 @@ export class Store {
 
             return match;
         });
+        this.loaded = this.pictures.length;
     };
 
     buyPicture = (id) => {
@@ -55,6 +57,14 @@ export class Store {
         this.pictures.find(pic => pic.id === id).order = true;
         this.bought++;
     };
+
+    addLoaded = () => {
+        this.loaded++;
+    };
+
+    get readyToShow() {
+        return this.loaded === this.pictures.length;
+    };
 }
 
 decorate(Store, {
@@ -62,9 +72,12 @@ decorate(Store, {
     status: observable,
     search: observable,
     bought: observable,
+    loaded: observable,
     filterByStatus: action,
     filterByTitle: action,
     buyPicture: action,
+    addLoaded: action,
+    readyToShow: computed,
 });
 
 export const store = new Store();

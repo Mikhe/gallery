@@ -7,6 +7,11 @@
   grid-auto-rows: 8px;
   grid-auto-columns: 8px;
   margin-top: 90px;
+  overflow: hidden;
+
+  &_hidden {
+    visibility: hidden;
+  }
 
   @media (max-width: 1480px) {
     margin: 32px auto;

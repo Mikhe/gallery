@@ -20,10 +20,10 @@ function resizeGridItem(item){
 
 const Gallery = observer(() => {
     const cn = createCn('gallery');
-    const { pictures } = store;
+    const { pictures, readyToShow } = store;
 
     return (
-        <div className={cn()}>
+        <div className={cn( { hidden: !readyToShow })}>
             {pictures.map(pic => (
                 <Picture pic={pic} cn={cn} key={pic.id}/>
             ))}
@@ -34,13 +34,14 @@ const Gallery = observer(() => {
 const Picture = observer((props) => {
     const { pic, cn } = props;
     const { id, sold, sale, price, title, weight, author, order } = pic;
-    const { buyPicture } = store;
+    const { buyPicture, addLoaded } = store;
     const ref = React.useRef(null);
     const prevPrice = sale ? price : '';
     const currentPrice = sale ? sale : price;
     const isSold = !!sold;
     const handleLoad = () => {
         resizeGridItem(ref.current);
+        addLoaded();
     };
     const handleBuy = () => {
         buyPicture(id)
