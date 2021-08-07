@@ -73,4 +73,27 @@ describe('[Store]', () => {
     });
     expect(store.readyToShow).toBe(true);
   });
+
+  test('[store] method get readyToShow return true after filter changes', () => {
+    const statusSold = 2;
+    const statusAll = 1;
+    let unsold = 0;
+
+    mockData.forEach((picture) => {
+      store.addLoaded();
+
+      if (!picture.sold) unsold++;
+    });
+
+    store.filterByStatus(statusSold);
+    expect(store.readyToShow).toBe(true);
+
+    store.filterByStatus(statusAll);
+    expect(store.readyToShow).toBe(false);
+
+    new Array(unsold).fill(1).forEach(() => {
+      store.addLoaded();
+    })
+    expect(store.readyToShow).toBe(true);
+  });
 });

@@ -47,7 +47,14 @@ export class Store {
 
             return match;
         });
-        this.loaded = this.pictures.length;
+
+        const newPicLen = this.pictures.length;
+
+        if (this.loaded >= newPicLen) {
+            this.loaded = newPicLen;
+        } else {
+            this.loaded = newPicLen - (newPicLen - this.loaded);
+        }
     };
 
     buyPicture = (id) => {
