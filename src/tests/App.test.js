@@ -13,6 +13,7 @@ describe('[Store]', () => {
     expect(store.status).toBe(1);
     expect(store.pictures).toEqual(mockData);
     expect(store.search).toBe('');
+    expect(store.loaded).toBe(0);
   });
 
   test('[store] method buyPicture buys a picture', () => {
@@ -60,5 +61,16 @@ describe('[Store]', () => {
     store.filterByTitle(search);
     expect(store.pictures)
         .toEqual(mockData.filter(pic => pic.title.toLowerCase().includes(search) && !!pic.sold === true ));
+  });
+
+  test('[store] method get readyToShow return false if not everything is loaded', () => {
+    expect(store.readyToShow).toBe(false);
+  });
+
+  test('[store] method get readyToShow return true if everything is loaded', () => {
+    mockData.forEach(() => {
+      store.addLoaded();
+    });
+    expect(store.readyToShow).toBe(true);
   });
 });
