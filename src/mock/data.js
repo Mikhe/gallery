@@ -37,7 +37,7 @@ const mockData = [
         src: pic2,
     },
     {
-        title: 'Pic 2 Long pic name should be there to test rendering 3',
+        title: 'Pic 3 Long pic name should be there to test rendering 3',
         author: 'Long author name should be there to test rendering 3',
         weight: '1501 г',
         price: '2 000 000 $',

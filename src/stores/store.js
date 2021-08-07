@@ -5,6 +5,7 @@ import mockData from '../mock/data';
 export class Store {
     pictures = [];
     status = 1;
+    search = '';
 
     constructor() {
         autorun(() => this.fetchPictures());
@@ -18,20 +19,41 @@ export class Store {
         if (status === this.status) return;
 
         this.status = status;
-
-        if (status === 2) {
-            this.pictures = mockData.filter(picture => picture.sold === true);
-        } else {
-            this.pictures = mockData;
-        }
+        this.filterPictures();
     };
-};
+
+    filterByTitle = (title) => {
+        if (title === this.search) return;
+
+        this.search = title || '';
+        this.filterPictures();
+    };
+
+    filterPictures = () => {
+        this.pictures = mockData.filter(({ sold, title }) => {
+            let match = true;
+
+            // by status
+            if (this.status === 2 && !sold) {
+                match = false;
+            }
+
+            // by name
+            if (!title.toLowerCase().includes(this.search.toLocaleLowerCase())) {
+                match = false;
+            }
+
+            return match;
+        });
+    };
+}
 
 decorate(Store, {
     pictures: observable,
     status: observable,
-    fetchPictures: action,
+    search: observable,
     filterByStatus: action,
+    filterByTitle: action,
 });
 
 export const store = new Store();
