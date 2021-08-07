@@ -31,7 +31,7 @@ const Gallery = observer(() => {
     );
 });
 
-const Picture = (props) => {
+const Picture = React.memo((props) => {
     const { pic, cn } = props;
     const ref = React.useRef(null);
     const prevPrice = pic.sale ? pic.price : '';
@@ -80,6 +80,6 @@ const Picture = (props) => {
             </div>
         </div>
     );
-};
+});
 
 export default Gallery;
