@@ -70,16 +70,6 @@ const mockData = [
         src: pic5,
     },
     {
-        id: 7,
-        title: 'Pic 2 Long pic name should be there to test rendering 1',
-        author: 'Long author name should be there to test rendering 1',
-        weight: '1501 г',
-        price: '2 000 000 $',
-        sale: '1 000 000 $',
-        sold: false,
-        src: pic2,
-    },
-    {
         id: 8,
         title: 'Pic 6',
         author: 'Сандро Боттичелли',
