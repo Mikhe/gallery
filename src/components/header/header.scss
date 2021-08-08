@@ -1,10 +1,13 @@
 @import '../../styles/colors';
 
 .header {
-  margin: 52px 90px;
+  margin: 52px auto;
+  max-width: 1920px;
+  padding: 0 90px;
 
   @media (max-width: 480px) {
     margin: 12px 20px 32px;
+    padding: 0;
   }
 
   &__container {

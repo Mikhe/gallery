@@ -8,6 +8,7 @@
   grid-auto-columns: 8px;
   margin-top: 90px;
   overflow: hidden;
+  min-height: calc(100vh - 1038px);
 
   &_hidden {
     visibility: hidden;
