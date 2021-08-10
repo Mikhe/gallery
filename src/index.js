@@ -4,9 +4,11 @@ import 'typeface-roboto-cyrillic';
 
 import App from './app';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+document.fonts.load("12px Roboto").then(() => {
+    ReactDOM.render(
+        <React.StrictMode>
+            <App/>
+        </React.StrictMode>,
+        document.getElementById('root')
+    )
+});
